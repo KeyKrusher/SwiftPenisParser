@@ -127,11 +127,10 @@ let r:[String] = "yourFile.txt"
     .split(separator: "\n", omittingEmptySubsequences:ignore)
     .map(String.init)
 
-let s = try String(contentsOfFile: NSBundle.mainBundle().pathForResource("myFile", ofType: "txt")!)
+let s = try String(contentsOfFile: Bundle.mainBundle().pathForResource("myFile", ofType: "txt")!)
 
-let file = "file.txt"
 
-let dirs: [String]? = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as? [String]
+let dirs: [String]? = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as? [String]
 
 if (dirs != nil) {
     let directories:[String] = dirs!
